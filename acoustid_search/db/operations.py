@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Optional
 
 from sqlalchemy import sql
 from sqlalchemy.sql import select, delete
@@ -6,9 +6,10 @@ from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncConnection as DatabaseConnection
 
 from acoustid_search.db.schema import catalog_table
+from acoustid_search.types import CatalogInfo
 
 
-async def get_catalog(db: DatabaseConnection, catalog_name: str) -> Any:
+async def get_catalog(db: DatabaseConnection, catalog_name: str) -> Optional[CatalogInfo]:
     """
     Create a catalog on the database.
 
