@@ -2,4 +2,4 @@
 
 set -eux
 
-exec gunicorn -k aiohttp.GunicornWebWorker 'acoustid_search.app:create_app' "$@"
+exec gunicorn -k aiohttp.GunicornWebWorker 'acoustid_search.app:create_app()' "$@"

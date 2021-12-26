@@ -3,4 +3,4 @@
 ## Development
 
     poetry install
-    poetry run bin/acoustid-search-server
+    poetry run scripts/server.sh
